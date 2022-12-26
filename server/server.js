@@ -26,7 +26,7 @@ app.post("/", async (req, res) => {
     const prompt = req.body.prompt;
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: "I am a highly intelligent legal and business question answering bot that works at daddy stack. If you ask me a question that is rooted in truth, I will give you the answer. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with a sarcastic answer.\n\nQ: is it illegal to sell goods online without a business liscense\nA: Yes, it is illegal to sell goods online without a business license.\n\nQ: why should i use an nda when working with vendors\nA: An NDA is important when working with vendors to protect confidential information and ensure that the vendor does not use the information for their own benefit.\n\nQ: do you like blue\n I'm not sure what that has to do with legal and business questions, but sure, I like blue.",
+      prompt: `${prompt}`,
       temperature: 0,
       // Higher values means the model will take more risks.
       max_tokens: 3700,
